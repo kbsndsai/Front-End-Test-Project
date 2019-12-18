@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">      
+            <form [formGroup] = "signupForm" (ngSubmit) = "onUpdateDetails()">
+                    <h3>Registration Form :</h3>
+                    <hr>
+                    <div formGroupName = "userData">
+                        <div class="form-group">
+                            <label for = "username">Username :</label>
+                            <input type = "text"                         
+                            id = "username" 
+                            class = "form-control"  
+                            formControlName = "username"                                      
+                            value = "{{ items[y].userData.username }}"
+                            style = "border: 1px; border-radius: 20px"
+                            placeholder="Edit username"  >                   
+                        </div>                 
+                        <div class="form-group">
+                            <label for = "email">Email :</label>
+                            <input type = "text" id = "email" class = "form-control"
+                            formControlName = "email" 
+                            value = "{{ items[y].userData.email }}"
+                            placeholder="Edit email" style = "border: 1px; border-radius: 20px">                   
+                        </div>
+                    </div>                
+                    <div class="radio" *ngFor = "let gender of genders">
+                        <label>
+                            <input type = "radio" [value] = "gender" formControlName = "gender">
+                            {{ gender }}
+                        </label>
+                    </div>                  
+
+                    <div formArrayName = "hobbies">
+                        <h4>Hobbies List :</h4>    
+                        <button type = "button" class = "btn btn-primary" (click) = "addHobby()">
+                            Add Hobbies
+                        </button> 
+
+                        <hr>
+                        <div class = "form-group" *ngFor = "let hobby of hobbies; let i = index">         
+                            <input type = "text" *ngIf = "flag"
+                                class = "form-control"                            
+                                placeholder="Edit hobby" style = "border: 1px; border-radius: 20px; padding: 10px"
+                                value = "{{ items[y].hobbies[i] }}">                                          
+                        </div>                      
+
+                        <hr>
+                        <div class = "form-group" *ngFor = "let hobbyControl of signupForm.get('hobbies').controls; let i=index">                       
+                            <input *ngIf="!flag"
+                             type = "text" class = "form-control" [formControlName] = "i" placeholder="Enter hobby" style = "border: 1px; border-radius: 20px">
+                        </div>
+                        
+                    </div>                
+                    <br>                
+                    <button type = "submit" class = "btn btn-success">Update</button> | 
+                    <button type = "button" class = "btn btn-primary" (click) = "onConsole()"> Display Data - Console </button>         
+            </form>                                                    
+        </div>
+    </div>
+</div>
