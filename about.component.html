@@ -1,0 +1,38 @@
+<div class="container"> 
+    <div>        
+        <button class = "btn btn-primary" type = "button" (click) = "onDisplay()">Display Data - Console</button>
+        <br>        
+        <div>
+            <table class = "table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Hobbies</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let item of items; let i = index" (click) = "onClick(i)">
+                        <td>
+                            {{ i+1 }}
+                        </td>
+                        <td> 
+                            {{ items[i].userData.username }}                      
+                        </td>
+                        <td>
+                            {{ items[i].userData.email }}
+                        </td>
+                        <td>
+                            {{ items[i].gender }}
+                        </td>
+                        <td>
+                            {{ items[i].hobbies }}
+                        </td>                        
+                    </tr>                    
+                </tbody>
+            </table>
+        </div>        
+    </div> 
+</div>
+
