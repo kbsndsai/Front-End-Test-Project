@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <li role="presentation" routerLinkActive = "active"
+        [routerLinkActiveOptions] = "{exact : true}"><a routerLink = "/"><h5>Home</h5></a></li>           
+        <li role="presentation" routerLinkActive = "active"><a routerLink = "/info"><h5>Info</h5></a></li>
+        <li role="presentation" routerLinkActive = "active"><a routerLink = "/about"><h5>About</h5></a></li>
+        <li role="presentation" routerLinkActive = "active"><a routerLink = "/edit-info"><h5>Edit-Info</h5></a></li>
+        <li role="presentation" routerLinkActive = "active"><a routerLink = "/viz"><h5>D3</h5></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <!-- <app-home></app-home> -->
+        <router-outlet></router-outlet>
+      </div>
+  </div>  
+</div>
+  <!-- <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <app-info></app-info>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <app-about></app-about>
+      </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <router-outlet></router-outlet>
+  </div>
+</div> -->
